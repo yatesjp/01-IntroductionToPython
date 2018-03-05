@@ -2,10 +2,10 @@
 Your chance to explore Loops and Turtles!
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
+         their colleagues and Jonah Yates.
 """
 ###############################################################################
-# TODO: 1.
+# DONE: 1.
 #   On Line 5 above, replace  PUT_YOUR_NAME_HERE  with your own name.
 ###############################################################################
 
@@ -27,3 +27,41 @@ Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
 #
 #   Don't forget to COMMIT-and-PUSH when you are done with this module.
 ###############################################################################
+
+import rosegraphics as rg
+
+window = rg.TurtleWindow()
+
+myTurtle = rg.SimpleTurtle()
+myTurtle.pen = rg.Pen('Red',9)
+myTurtle.speed = 4
+
+myTurtle.pen_up()
+myTurtle.forward(50)
+myTurtle.pen_down()
+
+stopSize = 45
+for n in range(6):
+    for k in range(8):
+        myTurtle.forward(stopSize)
+        myTurtle.right(45)
+    myTurtle.right(60)
+
+theirTurtle = rg.SimpleTurtle()
+theirTurtle.pen = rg.Pen('Midnight Blue',2)
+theirTurtle.speed = 10
+
+theirTurtle.pen_up()
+theirTurtle.right(135)
+theirTurtle.forward(300)
+theirTurtle.pen_down()
+theirTurtle.right(45)
+
+for q in range(60):
+    theirTurtle.forward(q*3)
+    theirTurtle.right(180-q)
+
+
+
+
+window.close_on_mouse_click()
